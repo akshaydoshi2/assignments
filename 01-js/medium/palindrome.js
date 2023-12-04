@@ -4,7 +4,18 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  const specialChars = [",","!","?","."," "]
+  let strArr = str.toLowerCase().split("")
+  let strArrFiltered = [];
+  for(let i = 0; i < strArr.length; i++){
+    if(!specialChars.includes(strArr[i])){
+      strArrFiltered.push(strArr[i])
+    }
+  }
+  if(strArrFiltered.join() == strArrFiltered.reverse().join()){
+    return true;
+  }
+  return false;
 }
 
 module.exports = isPalindrome;
